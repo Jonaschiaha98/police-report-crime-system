@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\crimeReportFormRequest;
+use App\Models\crime_report;
 use Illuminate\Http\Request;
 
 class crimeReportController extends Controller
@@ -14,20 +16,65 @@ class crimeReportController extends Controller
         return view('user.index');
     }
 
+    public function about()
+    {
+        return view('user.about_us');
+    }
+
+    public function reportedCrimes()
+    {
+        return view('admin.reported_crimes');
+    }
+
+    public function cash_solution()
+    {
+        return view('user.services.scash_solution');
+    }
+
+    public function crisis_management()
+    {
+        return view('user.services.crisis_management');
+    }
+
+    public function executive_protection()
+    {
+        return view('user.services.executive_protection');
+    }
+
+    public function police_services()
+    {
+        return view('user.services.police_services');
+    }
+
+    public function private_investigation()
+    {
+        return view('user.services.private_investigation');
+    }
+
+    public function blog()
+    {
+        return view('user.blog');
+    }
+
+    public function shop()
+    {
+        return view('user.shop');
+    }
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('user.report_crime');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(crimeReportFormRequest $request)
     {
-        //
+        crime_report::create()->$request()->validated();
+        return redirect()->route('crime.create')->with(["message" => "Crime Reported Successfully!"]);
     }
 
     /**

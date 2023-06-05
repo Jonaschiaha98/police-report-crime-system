@@ -15,9 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('state');
             $table->string('local_govt');
-            $table->string('street_name')->nullable();
-            $table->integer('street_no');
-            $table->string('file_path');
+            $table->string('street_address');
+            $table->string('file_path')->nullable();
             $table->integer('comment');
             $table->timestamps();
         });

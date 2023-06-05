@@ -196,8 +196,8 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <script type='text/javascript' src='{{ asset('wp-includes/js/hoverIntent.min3e5a.js?ver=1.10.2') }}' id='hoverIntent-js'></script>
 <script type='text/javascript' src='{{ asset('wp-content/themes/bodyguard/js/scripts6fb3.js?ver=6.1.3') }}' id='wd_scripts-js'></script>
 <script type='text/javascript' src='{{ asset('wp-content/themes/bodyguard/js/isMobile.min6fb3.js?ver=6.1.3') }}' id='wd_ismobile-js'></script>
-<link rel="https://api.w.org/" href="{{ asset('wp-json/index.html') }}" /><link rel="alternate" type="application/json" href="{{ asset('wp-json/wp/v2/pages/2968.json') }}" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" />
+<link rel="https://api.w.org/" href="{{ asset('wp-json/index.html') }}" /><link rel="alternate" type="application/json" href="{{ asset('wp-json/wp/v2/pages/2968.json') }}" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="{{ asset('xmlrpc0db0.php?rsd') }}" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="{{ asset('wp-includes/wlwmanifest.xml') }}" />
 <meta name="generator" content="WordPress 6.1.3" />
 <link rel="canonical" href="index.html" />
 <link rel='shortlink' href='index.html' />
@@ -296,11 +296,11 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 	</div>
 	<div class="menu-main-menu-container"><ul id="menu-main-menu" class="menu right">
 			<li id="menu-item-3131" class=" active_menu color-2">
-			<a href="index.html" class="has-icon" >Home</a>
+			<a href="{{ route('crime.index') }}" class="has-icon" >Home</a>
 </li>
 
 			<li id="menu-item-2750" class=" color-3">
-			<a href="about-us/index.html" class="has-icon" >About Us</a>
+			<a href="{{ route('about') }}" class="has-icon" >About Us</a>
 </li>
 
 			<li id="menu-item-2785" class="has-dropdown not-click  color-4">
@@ -310,60 +310,36 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 			
 	
 			<li id="menu-item-2762" class=" color-4">
-			<a href="services/private-investigation/index.html" class="has-icon" >Private Investigation</a>
+			<a href="{{ route('private_investigation') }}" class="has-icon" >Private Investigation</a>
 </li>
 	
 			<li id="menu-item-2783" class=" color-4">
-			<a href="services/executive-protection/index.html" class="has-icon" >Executive Protection</a>
-</li>
-	
-			<li id="menu-item-2782" class=" color-4">
-			<a href="services/crisis-management/index.html" class="has-icon" >Electronic Access Control System</a>
-</li>
-	
-			<li id="menu-item-2781" class=" color-4">
-			<a href="services/cash-solutions/index.html" class="has-icon" >Live Remote Monitoring</a>
+			<a href="{{ route('executive_protection') }}" class="has-icon" >Executive Protection</a>
 </li>
 	
 			<li id="menu-item-2780" class=" color-4">
-			<a href="services/police-services/index.html" class="has-icon" >Police services</a>
+			<a href="{{ route('police_services') }}" class="has-icon" >Police services</a>
+</li>
+<li id="menu-item-2782" class=" color-4">
+	<a href="{{ route('crisis_management') }}" class="has-icon" >Electronic Access Control System</a>
 </li>
 
+	<li id="menu-item-2781" class=" color-4">
+	<a href="{{ route('cash_solution') }}" class="has-icon" >Live Remote Monitoring</a>
+</li>
 </ul>
 
 </li>
-
-			{{-- <li id="menu-item-2729" class=" color-5">
-			<a href="shop/index.html" class="has-icon" >Shop</a>
-</li> --}}
 
 			<li id="menu-item-2733" class=" color-6">
-			<a href="blog/index.html" class="has-icon" >Blog</a>
+			<a href="{{ route('blog') }}" class="has-icon" >Blog</a>
 </li>
-{{-- 
-			<li id="menu-item-8" class="has-dropdown not-click  color-7">
-			<a href="sample-page/index.html" class="has-icon" >Pages</a>
-
-		<ul class="sub-menu dropdown ">
-			
-	
-			<li id="menu-item-2922" class=" color-7">
-			<a href="columns/index.html" class="has-icon" >Columns</a>
-</li>
-	
-			<li id="menu-item-2934" class=" color-7">
-			<a href="elements/index.html" class="has-icon" >Elements</a>
-</li>
-
-</ul>
-
-</li> --}}
     <li id="menu-item-2729" class=" color-5">
-			<a href="shop/index.html" class="has-icon" >Report Crime</a>
+			<a href="{{ route('crime.create') }}" class="has-icon" >Report Crime</a>
 </li>
 
 			<li id="menu-item-2742" class=" color-8">
-			<a href="contact-us/index.html" class="has-icon" >Contact Us</a>
+			<a href="{{ route('shop') }}" class="has-icon" >SHOP SECURITY ACCESSORIES</a>
 </li>
 </ul></div>
 			        </div>
