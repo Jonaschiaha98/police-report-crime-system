@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class crimeReportFormRequest extends FormRequest
+class ReportRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,11 +22,11 @@ class crimeReportFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "state" => "required|alpha",
-            "local_govt" => "required|alpha",
-            "street_address" => "required|alpha_num",
-            "comment" => "required|max:500",
-            "file_path" => "",
+            'state' => 'required',
+            'local_govt' => 'required',
+            'street_address' => 'required',
+            'comment' => 'required|max:500',
+            'file_path' => '',
         ];
     }
 }

@@ -9,6 +9,6 @@ class crime_report extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "state", "local_govt", "street_address", "file_path", "comment",
+        "state", "local_govt", "street_address", "file_path", "comment", "status"
     ];
 }

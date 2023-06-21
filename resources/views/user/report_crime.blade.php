@@ -37,10 +37,10 @@ Saturday: 09.00 – 12.00</p>
 <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
 <form action="{{ route('crime.store') }}" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
 @csrf
-<div class="large-6 columns"><span class="wpcf7-form-control-wrap" data-name="your-name"><input required type="text" name="street" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="State" /></span></p>
-<p><span class="wpcf7-form-control-wrap" data-name="your-email"><input required type="text" name="local_govt" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="LGA" /></span> </p>
-<p><span class="wpcf7-form-control-wrap" data-name="your-email"><input required type="text" name="street_address" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Street Address" /></span> </p>
-<p><span class="wpcf7-form-control-wrap" data-name="your-subject"><input type="file" name="file_path" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="support document" /></span></p>
+<div class="large-6 columns"><span class="wpcf7-form-control-wrap" data-name="your-name"><input required type="text" name="state" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="State" /></span></p>
+<p><span class="wpcf7-form-control-wrap" data-name="your-email"><input required type="text" name="local_govt" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="LGA" /></span> </p>
+<p><span class="wpcf7-form-control-wrap" data-name="your-email"><input required type="text" name="street_address" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Street Address" /></span> </p>
+<p><span class="wpcf7-form-control-wrap" data-name="your-subject"><input type="file" name="file_path" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="support document" /></span></p>
 
 </div>
 <div class="large-6 columns">

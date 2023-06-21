@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\crimeReportFormRequest;
+use App\Http\Requests\CrimeReportRequest;
 use App\Models\crime_report;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,9 @@ class crimeReportController extends Controller
 
     public function reportedCrimes()
     {
-        return view('admin.reported_crimes');
+        return view('admin.reported_crimes', [
+            "reportedCrimes" => crime_report::orderBy('id', 'desc')->get(),
+        ]);
     }
 
     public function cash_solution()
@@ -71,9 +74,9 @@ class crimeReportController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(crimeReportFormRequest $request)
+    public function store(CrimeReportRequest $request)
     {
-        crime_report::create()->$request()->validated();
+        crime_report::create($request->validated());
         return redirect()->route('crime.create')->with(["message" => "Crime Reported Successfully!"]);
     }
 
@@ -98,7 +101,9 @@ class crimeReportController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        dd($id);
+        crime_report::where('id', $id)->update('status', 'Attended to');
+        return redirect()->route('reported_crimes');
     }
 
     /**
@@ -106,6 +111,7 @@ class crimeReportController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        crime_report::where('id', $id)->forceDelete();
+        return redirect()->route('reported_crimes');
     }
 }

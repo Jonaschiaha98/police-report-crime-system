@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\crimeReportController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +18,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/policereportcrimes/reported/crimes', [crimeReportController::class, 'reportedCrimes'])->name('reported_crimes');
+
+});
+
+require __DIR__.'/auth.php';
+Route::resource('crime', crimeReportController::class);
 Route::prefix('policereportcrimes')->group(function () {
-    Route::resource('crime', crimeReportController::class);
-    Route::get('reported/crimes', [crimeReportController::class, 'reportedCrimes'])->name('reported_crimes');
+    
     Route::get('service/cash_solution', [crimeReportController::class, 'cash_solution'])->name('cash_solution');
     Route::get('service/crisis_management', [crimeReportController::class, 'crisis_management'])->name('crisis_management');
     Route::get('service/executive_protection', [crimeReportController::class, 'executive_protection'])->name('executive_protection');
