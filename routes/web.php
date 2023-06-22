@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\crimeReportController;
 use App\Http\Controllers\ProfileController;
+use App\Models\crime_report;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.reported_crimes', ["reportedCrimes" => crime_report::orderBy('id','desc')]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
